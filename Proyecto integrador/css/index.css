@@ -29,7 +29,7 @@ header {
 #menuicono {
     display: none;
     width: 95%;
-    height: 38px;
+    height: 3rem;
     padding: 12px 2% 0px 3%;
     background-color: #9FC8D9;
     border-top: 1px solid #094660;
@@ -39,8 +39,8 @@ header {
 .logo img {
     object-fit: cover;
     width: 82%;
-    min-width: 70px;
-    max-width: 200px;
+    min-width: 4rem;
+    max-width: 12rem;
 }
 
 .menu ul {
@@ -70,7 +70,7 @@ header {
 }
 
 #hero {
-    width: 100vw;
+    width: 99vw;
     height: 100vh;
     background-image: url("../images/hero5.jpg");
     background-size: cover;
@@ -79,7 +79,10 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    /*gap: 2em;*/
     
 }
 
@@ -152,13 +155,13 @@ header {
 
 #galery {
     height: 100vh;
-    width: 100vw;
+    width: 99vw;
     background-color: #F2F2F2;
 }
 
 #about-us {
     height: 100vh;
-    width: 100vw;
+    width: 99vw;
     background-color: #F2F2F2;
     animation: appear;
     animation-duration: 5s;  
@@ -166,7 +169,7 @@ header {
 
 #contact {
     height: 90vh;
-    width: 100vw;
+    width: 99vw;
     background-color: #F2F2F2;
 }
 
@@ -201,11 +204,11 @@ header {
 }
 
 #contact form input {
-    width: 50%;
+    width: 70%;
 }
 
 #contact form textarea {
-    width: 50%;
+    width: 70%;
 }
 
 #contact h2 {
@@ -217,15 +220,20 @@ header {
     padding-right: 20%;
     padding-left: 20%;
     padding-top: 5%;
-    font-size: 2em;
+    font-size: 2.5em;
+}
+
+#about-us h2 {
+    font-size: 4em;
 }
 
 #contact form #envio {
     background-color: var(--maincolor);
     color: #F2F2F2;
     font-size: 1.2em;
-    width: 30%;
-    height: 2em;
+    width: 40%;
+    height: 2.5em;
+    border-radius: 10px;
 }
 
 #contact form #envio:hover {
@@ -238,6 +246,29 @@ header {
     transition: background-color 0.2s;
 }
 
+#contact .entry::placeholder {
+    font-size: 1.2em;
+    color: var(--maincolor);
+    background-color: #F2F2F2;
+}
+
+#contact .entry:active {
+    background-color: var(--maincolor);
+    color:#F2F2F2;
+}
+
+#contact .entry {
+    font-size: 1.2em;
+    color: var(--maincolor);
+    background-color: #F2F2F2;
+    border-radius: 10px;
+}
+
+#contact #cuerpo {
+    font-size: 1.1em;
+}
+
+
 
 footer {
     background-color: var(--maincolor);
@@ -245,6 +276,7 @@ footer {
     display: flex;
     flex-direction: column;
     height: 10vh;
+    width: 99vw;
 }
 
 .footer__desc {
@@ -410,3 +442,6 @@ transition: background-color 0.2s;
 
 
 
+#prueba {
+    z-index: 3;
+}
