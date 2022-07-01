@@ -20,7 +20,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    width: 100vw;
+    width: 98.7vw;
     background-color: var(--maincolor);
     position: fixed;
     z-index: 3;
@@ -38,7 +38,7 @@ header {
 
 .logo img {
     object-fit: cover;
-    width: 82%;
+    width: 73%;
     min-width: 4rem;
     max-width: 12rem;
 }
@@ -70,7 +70,7 @@ header {
 }
 
 #hero {
-    width: 99vw;
+    width: 98.7vw;
     height: 100vh;
     background-image: url("../images/hero5.jpg");
     background-size: cover;
@@ -155,21 +155,30 @@ header {
 
 #galery {
     height: 100vh;
-    width: 99vw;
+    width: 98.7vw;
     background-color: #F2F2F2;
 }
 
 #about-us {
     height: 100vh;
-    width: 99vw;
+    width: 98.7vw;
     background-color: #F2F2F2;
     animation: appear;
     animation-duration: 5s;  
 }
 
+#herramientas {
+    height: 100vh;
+    width: 98.7vw;
+    background-color: #F2F2F2;
+    animation: appear;
+    animation-duration: 5s;  
+}
+
+
 #contact {
     height: 90vh;
-    width: 99vw;
+    width: 98.7vw;
     background-color: #F2F2F2;
 }
 
@@ -179,7 +188,7 @@ header {
     object-fit: cover;
 }
 
-#about-us, #contact {
+#about-us, #contact, #herramientas {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -203,12 +212,19 @@ header {
     width: 50%;
 }
 
+form #asunto {
+    margin-top: 0;
+}
+
+
 #contact form input {
     width: 70%;
 }
 
 #contact form textarea {
     width: 70%;
+    font-size: 1.1em;
+    height: 30%;
 }
 
 #contact h2 {
@@ -220,12 +236,14 @@ header {
     padding-right: 20%;
     padding-left: 20%;
     padding-top: 5%;
-    font-size: 2.5em;
+    font-size: 2.2em;
 }
 
 #about-us h2 {
-    font-size: 4em;
+    font-size: 3em;
+    margin-top: 2em;
 }
+
 
 #contact form #envio {
     background-color: var(--maincolor);
@@ -264,10 +282,6 @@ header {
     border-radius: 10px;
 }
 
-#contact #cuerpo {
-    font-size: 1.1em;
-}
-
 
 
 footer {
@@ -276,7 +290,7 @@ footer {
     display: flex;
     flex-direction: column;
     height: 10vh;
-    width: 99vw;
+    width: 98.7vw;
 }
 
 .footer__desc {
@@ -305,7 +319,7 @@ footer {
 
 .login__form {
     height: 100vh;
-    width: 100vw;
+    width: 98.7vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
