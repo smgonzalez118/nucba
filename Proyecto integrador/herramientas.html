@@ -31,8 +31,15 @@
             <p> Busque un activo financiero por su ticker y le brindaremos un estado de situación del mismo</p>
 
             <input type="text" name="user" id="ticker" placeholder="TICKER">
-            <input type="button" value="BUSCAR" id="login__form-button">
+            <input type="button" onclick=getRecomend() value="BUSCAR" id="login__form-button">
+
+            <div class="results">
+                <div id="precioActual"></div>
+                <div id="mediaMovil10d"></div>
+                <div id="recomendacion"></div>
+            </div>
         </form>
+
     </section>
 
 
@@ -46,6 +53,7 @@
     </footer> 
 
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-async function getData() {
+async function getRecomend() {
     
     $ticker = document.querySelector("#ticker").value.toUpperCase()
 
@@ -16,8 +16,8 @@ async function getData() {
       }
     }
     
-    let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
-
+    //let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
+    date = "2022-07-01"
 
     const nuevo = await fetch(endpoint).then(
         data => data.json())
@@ -36,20 +36,23 @@ async function getData() {
     
     let recomendacion = ""
     let mediaMovil10d = parseFloat((suma / 20).toFixed(2))
+    $precio_actual = document.querySelector("#precioActual")
+    $mediaMovil10d = document.querySelector("#mediaMovil10d")
+    $recomendacion = document.querySelector("#recomendacion")
+    
     console.log(mediaMovil10d)
     console.log(precio_actual)
     if (precio_actual > mediaMovil10d) {
         recomendacion = "COMPRA"
+        $recomendacion.classList.add("verde")
     } else {
         recomendacion = "VENTA"
+        $recomendacion.classList.add("rojo")
     }
 
-    $precio_actual = document.querySelector("#precioActual")
-    $mediaMovil10d = document.querySelector("#mediaMovil10d")
-    $recomendacion = document.querySelector("#recomendacion")
 
-    $precio_actual.textContent = `$ ${precio_actual}`
-    $mediaMovil10d.textContent = `$ ${mediaMovil10d}`
+    $precio_actual.textContent = `PRECIO ACTUAL: $ ${precio_actual}`
+    $mediaMovil10d.textContent = `MEDIA MÓVIL DE 10 DÍAS: $ ${mediaMovil10d}`
     $recomendacion.textContent = recomendacion
 
     // Colocar el valor del precio actual en el DOM, en algún span
