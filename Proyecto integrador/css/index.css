@@ -14,7 +14,11 @@ header {
     position: relative;
 }
 
-#menuprincipal {
+.menuMob {
+    display: none;
+}
+
+#menuprincipal, #menuapp {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -444,6 +448,24 @@ transition: background-color 0.2s;
 
     .search p, h2 {
         text-align: center;
+    }
+
+    .menuMob {
+        display: flex;
+        flex-direction: row;
+        gap: 1.2em;
+        padding-top: 1em;
+    }
+
+    .menuMob li a {
+        color:#F2F2F2;
+        padding: 10%;
+        font-weight: 500;
+    }
+
+    .menuMob li a:active {
+        background-color: #017a7a;
+        color: var(--maincolor);
     }
 
     #contact form {
