@@ -171,10 +171,12 @@ header {
     height: 100vh;
     width: 98.7vw;
     background-color: #F2F2F2;
-    animation: appear;
-    animation-duration: 5s;  
+    padding-top: 10%;
 }
 
+.search {
+    padding-top: 2%;
+}
 
 #contact {
     height: 90vh;
@@ -253,6 +255,20 @@ form #asunto {
     height: 2.5em;
     border-radius: 10px;
 }
+
+#dispara_ac {
+    background-color: orangered;
+    color: #F2F2F2;
+    font-size: 1.0em;
+    font-weight: 800;
+    width: 25%;
+    height: 2.5em;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+
+
 
 #contact form #envio:hover {
     background-color:#015a7a;
@@ -421,6 +437,15 @@ transition: background-color 0.2s;
         padding: 0;
     }
 
+    .search {
+        padding-top: 15%;
+        align-items: center;
+    }
+
+    .search p, h2 {
+        text-align: center;
+    }
+
     #contact form {
         width: 90%;
     }
@@ -464,6 +489,21 @@ transition: background-color 0.2s;
 
     #menuprincipal ul {
         display: none;
+    }
+
+    #dispara_ac {
+        background-color: orangered;
+        color: #F2F2F2;
+        font-size: 1.0em;
+        font-weight: 800;
+        width: 30%;
+        height: 15%;
+        border-radius: 10px;
+        margin-top: 5%;
+    }
+
+    .footer__menu {
+        padding-left: 0.2em;
     }
 }
 

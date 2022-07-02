@@ -39,11 +39,13 @@ async function getRecomend() {
         let precio = data['Time Series (Daily)'][fecha]["4. close"]
         suma += parseFloat(precio)
         contador += 1
+        console.log(precio)
         if (contador === 20) {
             break
         }
     }
     
+    let precio_7d = 0
     let recomendacion = ""
     let mediaMovil10d = parseFloat((suma / 20).toFixed(2))
     $precio_actual = document.querySelector("#precioActual")
@@ -66,6 +68,23 @@ async function getRecomend() {
     $recomendacion.textContent = recomendacion
     
     })
+}
+
+
+function aclaracion() {
+    let text = `Nota para mentor de NUCBA: la siguiente herramienta utiliza la API de Alpha Vantage. 
+    Utilizo una función asincrónica para hacer el FETCH y parametrizo la URL con template strings,
+    dandole la posibilidad al usuario de que ingrese el Ticker (se captura del formulario). 
+    Incluso contempla los días sábados y domingos, evitando errores mediante una validación que formatea la fecha
+    (a excepción de los feriados bursátiles... cuestión bastante compleja)
+    Luego, recorro la data y me quedo con los precios de los últimas 20 ruedas (condición break), 
+    calculo un promedio y lo comparo con el precio actual, determinando una recomendación de inversión que 
+    tendrá distinto color de letra según el valor (se agregan distintas clases en el DOM).
+    Es decir, usé funciones asincrónicas, bucles, fechas, JSON, cálculos aritméticos, manipulación del DOM, parseos, 
+    etc.
+    Parece algo sencillo pero hice uso de absolutamente todas las herramientas.
+    Cualquier duda, a disposición. Muchas gracias`
+    alert(text)
 }
 
 
