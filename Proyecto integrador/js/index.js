@@ -16,8 +16,18 @@ async function getRecomend() {
       }
     }
     
+    let date = ""
+    if (f.getDay() == 7) {
+        date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-2)
+    } else if (f.getDay() == 6) {
+        date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-1)
+    } else {
+        date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
+    }
+    console.log(date)
+
     //let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
-    date = "2022-07-01"
+    //date = "2022-07-01"
 
     const nuevo = await fetch(endpoint).then(
         data => data.json())
@@ -54,10 +64,9 @@ async function getRecomend() {
     $precio_actual.textContent = `PRECIO ACTUAL: $ ${precio_actual}`
     $mediaMovil10d.textContent = `MEDIA MÓVIL DE 10 DÍAS: $ ${mediaMovil10d}`
     $recomendacion.textContent = recomendacion
-
-    // Colocar el valor del precio actual en el DOM, en algún span
-    // Colocar el valor de la MM de 10 ruedas en el DOM, en algún span
     
     })
 }
- 
+
+
+// Me queda adaptar esta página para celular
