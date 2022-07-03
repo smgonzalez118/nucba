@@ -540,7 +540,7 @@ form #results {
     height: 30%;
 }
 
-#precioActual, #mediaMovil10d {
+#precioActual, #mediaMovil20d {
     font-size: 2em;
     background-color:#dce3e4;
     color:var(--maincolor);
