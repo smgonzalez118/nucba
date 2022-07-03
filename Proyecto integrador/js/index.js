@@ -49,7 +49,7 @@ async function getRecomend() {
     let recomendacion = ""
     let mediaMovil10d = parseFloat((suma / 20).toFixed(2))
     $precio_actual = document.querySelector("#precioActual")
-    $mediaMovil10d = document.querySelector("#mediaMovil10d")
+    $mediaMovil20d = document.querySelector("#mediaMovil20d")
     $recomendacion = document.querySelector("#recomendacion")
     
     console.log(mediaMovil10d)
@@ -64,7 +64,7 @@ async function getRecomend() {
 
 
     $precio_actual.textContent = `PRECIO ACTUAL: $ ${precio_actual}`
-    $mediaMovil10d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil10d}`
+    $mediaMovil10d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil20d}`
     $recomendacion.textContent = recomendacion
     
     })
