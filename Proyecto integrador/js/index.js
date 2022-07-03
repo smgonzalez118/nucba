@@ -39,7 +39,6 @@ async function getRecomend() {
         let precio = data['Time Series (Daily)'][fecha]["4. close"]
         suma += parseFloat(precio)
         contador += 1
-        console.log(precio)
         if (contador === 20) {
             break
         }
@@ -47,14 +46,14 @@ async function getRecomend() {
     
     let precio_7d = 0
     let recomendacion = ""
-    let mediaMovil10d = parseFloat((suma / 20).toFixed(2))
+    let mediaMovil20d = parseFloat((suma / 20).toFixed(2))
     $precio_actual = document.querySelector("#precioActual")
     $mediaMovil20d = document.querySelector("#mediaMovil20d")
     $recomendacion = document.querySelector("#recomendacion")
     
-    console.log(mediaMovil10d)
+    console.log(mediaMovil20d)
     console.log(precio_actual)
-    if (precio_actual > mediaMovil10d) {
+    if (precio_actual > mediaMovil20d) {
         recomendacion = "COMPRA"
         $recomendacion.classList.add("verde")
     } else {
