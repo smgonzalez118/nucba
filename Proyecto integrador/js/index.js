@@ -17,9 +17,9 @@ async function getRecomend() {
     }
     
     let date = ""
-    if (f.getDay() == 7) {
+    if (f.getDay() == 0) {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-2)
-    } else if (f.getDay() == 6) {
+    } else if (f.getDay() == 7) {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-1)
     } else {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
