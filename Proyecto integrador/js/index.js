@@ -63,7 +63,7 @@ async function getRecomend() {
 
 
     $precio_actual.textContent = `PRECIO ACTUAL: $ ${precio_actual}`
-    $mediaMovil10d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil20d}`
+    $mediaMovil20d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil20d}`
     $recomendacion.textContent = recomendacion
     
     })
