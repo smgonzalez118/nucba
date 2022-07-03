@@ -463,6 +463,10 @@ transition: background-color 0.2s;
         font-weight: 500;
     }
 
+    .menuMob li {
+        padding-top: 7%;
+    }
+
     .menuMob li a:active {
         background-color: #017a7a;
         color: var(--maincolor);
