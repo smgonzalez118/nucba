@@ -72,8 +72,7 @@ async function getRecomend() {
     
     })
     .catch(
-        alert("NO ES POSIBLE CONSULTAR LA INFORMACIÓN FINANCIERA HOY. FERIADO BURSÁTIL")
-
+        alert("NO ES POSIBLE CONSULTAR LA INFORMACIÓN FINANCIERA HOY. FERIADO BURSÁTIL"),
     )
 }
 

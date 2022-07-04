@@ -450,6 +450,12 @@ transition: background-color 0.2s;
         text-align: center;
     }
 
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit:fill;
+    }
+
     .menuMob {
         display: flex;
         flex-direction: row;
