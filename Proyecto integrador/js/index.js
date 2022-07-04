@@ -5,6 +5,8 @@ async function getRecomend() {
     const API_KEY = "LT6OSQ25CS08KJTY"
 
     let endpoint = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${$ticker}&apikey=${API_KEY}`
+    /*const FERIADOS = [{dia: 17, mes: 1}, {dia: 21, mes: 2}, {dia: 15, mes: 4}, {dia: 30, mes: 5}, {dia: 19, mes: 6},
+    {dia: 4, mes: 7}, {dia: 5, mes: 9}, {dia: 24, mes: 11}, {dia: 26, mes: 12}]*/
 
     let f = new Date()
     function formatea(fecha) {
@@ -21,7 +23,9 @@ async function getRecomend() {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-2)
     } else if (f.getDay() == 7) {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-1)
-    } else {
+    }
+
+    else {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
     }
     console.log(date)
@@ -67,6 +71,10 @@ async function getRecomend() {
     $recomendacion.textContent = recomendacion
     
     })
+    .catch(
+        alert("NO ES POSIBLE CONSULTAR LA INFORMACIÓN FINANCIERA HOY. FERIADO BURSÁTIL")
+
+    )
 }
 
 
