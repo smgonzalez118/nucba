@@ -27,11 +27,14 @@ async function getRecomend() {
         lastday = 1
     } else if (f.getHours() < 18) {
         if (f.getDay() == 0) {
-                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-2) }
+                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-2)
+                lastday = 1 }
         else if (f.getDay() == 1) {
-                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-3) }
+                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-3) 
+                lastday = 1}
         else {
-                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-1) }
+                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-1) 
+                lastday = 1}
         }
     else {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
@@ -79,7 +82,7 @@ async function getRecomend() {
     $mediaMovil20d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil20d}`
     $recomendacion.textContent = recomendacion
     if (lastday === 1) {
-        $lastday.textContent = "Nota: el precio de cierre corresponde al día anterior (último cierre)"
+        $lastday.textContent = "Nota: el precio de cierre corresponde al cierre anterior"
     }
     })
 }
