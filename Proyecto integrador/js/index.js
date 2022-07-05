@@ -71,9 +71,6 @@ async function getRecomend() {
     $recomendacion.textContent = recomendacion
     
     })
-    .catch(
-        alert("NO ES POSIBLE CONSULTAR LA INFORMACIÓN FINANCIERA HOY. FERIADO BURSÁTIL"),
-    )
 }
 
 
