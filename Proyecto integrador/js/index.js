@@ -82,7 +82,6 @@ async function getRecomend() {
         $lastday.textContent = "Nota: el precio de cierre corresponde al día anterior (último cierre)"
     }
     })
-    .catch(alert("Información financiera no disponible por el momento."))
 }
 
 
