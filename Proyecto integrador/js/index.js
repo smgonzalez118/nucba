@@ -71,7 +71,7 @@ async function getRecomend() {
     $recomendacion.textContent = recomendacion
     
     })
-    .catch(alert("Información financiera no disponible"))
+    .catch(alert("Información financiera no disponible por el momento. Por favor, consultar luego de las 17.30hs UTC-3 "))
 }
 
 
