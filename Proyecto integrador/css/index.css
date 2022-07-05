@@ -236,6 +236,8 @@ form #asunto {
 #contact h2 {
     padding-bottom: 1em;
     padding-top: 1em;
+    font-size: 3em;
+    margin-top: 2em;
 }
 
 #about-us p {

@@ -96,10 +96,8 @@ function aclaracion() {
     calculo un promedio y lo comparo con el precio actual, determinando una recomendación de inversión que 
     tendrá distinto color de letra según el valor (se agregan distintas clases en el DOM).
     Es decir, usé funciones asincrónicas, bucles, fechas, JSON, cálculos aritméticos, manipulación del DOM, parseos, 
-    etc.
-    Parece algo sencillo pero hice uso de absolutamente todas las herramientas.
-    
-    IMPORTANTE: la API actualiza los precios a las 16.30 (ET) o bien 17.30 de Argentina, 
+    etc.Parece algo sencillo pero hice uso de absolutamente todas las herramientas.
+        IMPORTANTE: la API actualiza los precios a las 16.30 (ET) o bien 17.30 de Argentina, 
     por lo que hasta tanto, no se podrá consultar el diagnóstico del activo actualizado. 
     Las API gratuitas ofrecen este tipo de limitaciones.
     Pero puse una condición para que tome el último cierre, y funciona bien, 
