@@ -7,6 +7,7 @@ async function getRecomend() {
     let endpoint = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${$ticker}&apikey=${API_KEY}`
     /*const FERIADOS = [{dia: 17, mes: 1}, {dia: 21, mes: 2}, {dia: 15, mes: 4}, {dia: 30, mes: 5}, {dia: 19, mes: 6},
     {dia: 4, mes: 7}, {dia: 5, mes: 9}, {dia: 24, mes: 11}, {dia: 26, mes: 12}]*/
+    let lastday = 0
 
     let f = new Date()
     function formatea(fecha) {
@@ -21,14 +22,16 @@ async function getRecomend() {
     let date = ""
     if (f.getDay() == 0) {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-2)
-    } else if (f.getDay() == 7) {
+    } else if ((f.getDay() == 7) || (f.getHours() < 18)) {
+        // Si es sábado o todavía no son las 18 hs (se actualiza la data), toma el día anterior
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-1)
+        lastday = 1
     }
-
     else {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
     }
     console.log(date)
+    f.get
 
     //let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
     //date = "2022-07-01"
@@ -54,6 +57,7 @@ async function getRecomend() {
     $precio_actual = document.querySelector("#precioActual")
     $mediaMovil20d = document.querySelector("#mediaMovil20d")
     $recomendacion = document.querySelector("#recomendacion")
+    $lastday = document.querySelector("#lastday")
     
     console.log(mediaMovil20d)
     console.log(precio_actual)
@@ -69,9 +73,11 @@ async function getRecomend() {
     $precio_actual.textContent = `PRECIO ACTUAL: $ ${precio_actual}`
     $mediaMovil20d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil20d}`
     $recomendacion.textContent = recomendacion
-    
+    if (lastday === 1) {
+        $lastday.textContent = "Nota: el precio de cierre corresponde al día anterior (último cierre)"
+    }
     })
-    .catch(alert("Información financiera no disponible por el momento. Por favor, consultar luego de las 17.30hs UTC-3 "))
+    .catch(alert("Información financiera no disponible por el momento."))
 }
 
 
