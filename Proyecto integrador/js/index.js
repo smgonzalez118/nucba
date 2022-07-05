@@ -82,8 +82,16 @@ async function getRecomend() {
     $mediaMovil20d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil20d}`
     $recomendacion.textContent = recomendacion
     if (lastday === 1) {
-        $lastday.textContent = "Nota: el precio de cierre corresponde al cierre anterior"
+        $lastday.textContent = "Nota: el precio de cierre corresponde al cierre anterior" }
+    else {
+        $lastday.textContent = ""
     }
+    })
+    .catch( function() { 
+        $lastday.textContent = "Ticker incorrecto o información financiera no disponible"
+        $precio_actual.textContent = ``
+        $mediaMovil20d.textContent = ``
+        $recomendacion.textContent = ``
     })
 }
 

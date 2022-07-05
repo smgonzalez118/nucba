@@ -571,3 +571,7 @@ form #results {
 .rojo {
     color: red;
 }
+
+#lastday {
+    font-size: 2em;
+}
