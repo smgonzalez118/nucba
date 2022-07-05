@@ -108,10 +108,7 @@ function aclaracion() {
     Es decir, usé funciones asincrónicas, bucles, fechas, JSON, cálculos aritméticos, manipulación del DOM, parseos, 
     etc.Parece algo sencillo pero hice uso de absolutamente todas las herramientas.
         IMPORTANTE: la API actualiza los precios a las 16.30 (ET) o bien 17.30 de Argentina, 
-    por lo que hasta tanto, no se podrá consultar el diagnóstico del activo actualizado. 
-    Las API gratuitas ofrecen este tipo de limitaciones.
-    Pero puse una condición para que tome el último cierre, y funciona bien, 
-    a excepción de si el día anterior que debía ser hábil, fue feriado (ej. el 04/07/22)
+    antes de esa hora los precios serán los del día anterior (limitación de API gratuita)
     
     Cualquier duda, a disposición. Muchas gracias`
     alert(text)
