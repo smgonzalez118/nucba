@@ -87,6 +87,11 @@ function aclaracion() {
     Es decir, usé funciones asincrónicas, bucles, fechas, JSON, cálculos aritméticos, manipulación del DOM, parseos, 
     etc.
     Parece algo sencillo pero hice uso de absolutamente todas las herramientas.
+    
+    IMPORTANTE: la API actualiza los precios a las 16.30 (ET) o bien 17.30 de Argentina, 
+    por lo que hasta tanto, no se podrá consultar el diagnóstico del activo. 
+    Las API gratuitas ofrecen este tipo de limitaciones.
+    
     Cualquier duda, a disposición. Muchas gracias`
     alert(text)
 }
