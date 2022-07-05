@@ -71,6 +71,7 @@ async function getRecomend() {
     $recomendacion.textContent = recomendacion
     
     })
+    .catch(alert("Información financiera no disponible"))
 }
 
 
