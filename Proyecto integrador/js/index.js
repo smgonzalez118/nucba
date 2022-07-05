@@ -22,16 +22,21 @@ async function getRecomend() {
     let date = ""
     if (f.getDay() == 0) {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-2)
-    } else if ((f.getDay() == 7) || (f.getHours() < 18)) {
-        // Si es sábado o todavía no son las 18 hs (se actualiza la data), toma el día anterior
+    } else if ((f.getDay() == 7)) {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-1)
         lastday = 1
-    }
+    } else if (f.getHours() < 18) {
+        if (f.getDay() == 0) {
+                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-2) }
+        else if (f.getDay() == 1) {
+                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-3) }
+        else {
+                date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate()-1) }
+        }
     else {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
     }
     console.log(date)
-    f.get
 
     //let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
     //date = "2022-07-01"
@@ -95,8 +100,10 @@ function aclaracion() {
     Parece algo sencillo pero hice uso de absolutamente todas las herramientas.
     
     IMPORTANTE: la API actualiza los precios a las 16.30 (ET) o bien 17.30 de Argentina, 
-    por lo que hasta tanto, no se podrá consultar el diagnóstico del activo. 
+    por lo que hasta tanto, no se podrá consultar el diagnóstico del activo actualizado. 
     Las API gratuitas ofrecen este tipo de limitaciones.
+    Pero puse una condición para que tome el último cierre, y funciona bien, 
+    a excepción de si el día anterior que debía ser hábil, fue feriado (ej. el 04/07/22)
     
     Cualquier duda, a disposición. Muchas gracias`
     alert(text)
