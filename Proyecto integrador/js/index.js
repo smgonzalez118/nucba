@@ -1,5 +1,5 @@
 async function getRecomend() {
-    
+    $lastday = document.querySelector("#lastday")
     $ticker = document.querySelector("#ticker").value.toUpperCase()
 
     const API_KEY = "LT6OSQ25CS08KJTY"
@@ -65,7 +65,6 @@ async function getRecomend() {
     $precio_actual = document.querySelector("#precioActual")
     $mediaMovil20d = document.querySelector("#mediaMovil20d")
     $recomendacion = document.querySelector("#recomendacion")
-    $lastday = document.querySelector("#lastday")
     
     console.log(mediaMovil20d)
     console.log(precio_actual)
