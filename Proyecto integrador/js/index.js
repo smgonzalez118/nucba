@@ -1,5 +1,4 @@
 async function getRecomend() {
-    $lastday = document.querySelector("#lastday")
     $ticker = document.querySelector("#ticker").value.toUpperCase()
 
     const API_KEY = "LT6OSQ25CS08KJTY"
@@ -43,7 +42,6 @@ async function getRecomend() {
 
     //let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
     //date = "2022-07-01"
-
     const nuevo = await fetch(endpoint).then(
         data => data.json())
     .then(data => {
@@ -76,7 +74,7 @@ async function getRecomend() {
         $recomendacion.classList.add("rojo")
     }
 
-
+    $lastday = document.querySelector("#lastday")
     $precio_actual.textContent = `PRECIO ACTUAL: $ ${precio_actual}`
     $mediaMovil20d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil20d}`
     $recomendacion.textContent = recomendacion
