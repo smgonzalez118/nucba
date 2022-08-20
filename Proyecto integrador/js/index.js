@@ -1,3 +1,8 @@
+let $lastday = document.querySelector("#lastday")
+let $precio_actual = document.querySelector("#precioActual")
+let $mediaMovil20d = document.querySelector("#mediaMovil20d")
+let $recomendacion = document.querySelector("#recomendacion")
+
 async function getRecomend() {
     $ticker = document.querySelector("#ticker").value.toUpperCase()
 
@@ -38,7 +43,6 @@ async function getRecomend() {
     else {
         date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
     }
-    console.log(date)
 
     //let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
     //date = "2022-07-01"
@@ -60,9 +64,6 @@ async function getRecomend() {
     let precio_7d = 0
     let recomendacion = ""
     let mediaMovil20d = parseFloat((suma / 20).toFixed(2))
-    $precio_actual = document.querySelector("#precioActual")
-    $mediaMovil20d = document.querySelector("#mediaMovil20d")
-    $recomendacion = document.querySelector("#recomendacion")
     
     console.log(mediaMovil20d)
     console.log(precio_actual)
@@ -74,7 +75,7 @@ async function getRecomend() {
         $recomendacion.classList.add("rojo")
     }
 
-    $lastday = document.querySelector("#lastday")
+    
     $precio_actual.textContent = `PRECIO ACTUAL: $ ${precio_actual}`
     $mediaMovil20d.textContent = `MEDIA MÓVIL DE 20 DÍAS: $ ${mediaMovil20d}`
     $recomendacion.textContent = recomendacion

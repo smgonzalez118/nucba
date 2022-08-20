@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Autitos</title>
+  </head>
+
+  <body>
+    <div id="root">not rendered</div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16.8.4/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.development.js"
+    ></script>
+    <style>
+      body {
+        color: peru;
+      }
+    </style>
+    <script>
+      //aca VA REACT
+      const Cars = ({ marca, modelo, tipo }) => {
+        return React.createElement('div', {}, [
+          React.createElement('h2', {}, marca),
+          React.createElement('h3', {}, modelo),
+          React.createElement('h4', {}, tipo),
+        ]);
+      };
+
+      const Title = () => {
+        return React.createElement('h1', { id: 'lalala' }, 'Autos Chetos!!');
+      };
+
+      const Button = ({ logClick }) => {
+        return React.createElement('button', { onClick: logClick }, 'Click!!');
+      };
+
+      const App = () => {
+        const logClick = () => {
+          console.log('Hey!!!');
+        };
+        /*  ARGUMENTOS DEL React.createElement(1, 2, 3)
+            1) elemento HTML (string)/otro componente 
+            2)  Atributos de ese elemento como {} 
+            3) Hijos que pueda llegar a tener
+
+        */
+        return React.createElement('div', {}, [
+          React.createElement(Title, {}, []),
+          React.createElement(
+            Cars,
+            {
+              marca: 'Ford',
+              modelo: 'Fiesta',
+              tipo: 'sedan',
+            },
+            []
+          ),
+          React.createElement(
+            Cars,
+            {
+              marca: 'Chevrolet',
+              modelo: 'Cruze',
+              tipo: 'sedan',
+            },
+            []
+          ),
+          React.createElement(
+            Cars,
+            {
+              marca: 'Fiat',
+              modelo: 'Punto',
+              tipo: 'sedan',
+            },
+            []
+          ),
+          React.createElement(Button, { logClick }),
+        ]);
+      };
+
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
