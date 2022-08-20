@@ -67,6 +67,24 @@ const Header = () => {
                     setTimeout( () => {menu.style.display = "block"}, 2000)
 
                 }}>Contacto</li></Link>
+
+                <Link to="/login"><li onClick={() => {
+                    let menu = document.getElementById("menu")
+                    menu.style.display = "none"
+                    
+                    setTimeout( () => {menu.style.display = "block"}, 2000)
+
+                }}>Ingresar</li></Link>
+
+                <Link to="/register"><li onClick={() => {
+                    let menu = document.getElementById("menu")
+                    menu.style.display = "none"
+                    
+                    setTimeout( () => {menu.style.display = "block"}, 2000)
+
+                }}>Registrarse</li></Link>
+
+
                 </ul>
             </div>
         </nav>
