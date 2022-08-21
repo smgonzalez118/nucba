@@ -3,7 +3,12 @@ import { Link } from "react-router-dom"
 
 
 const Header = () => {
-  return (
+    const closeMenu = () => {
+        let menu = document.getElementById("check")
+        menu.checked = false
+    }
+  
+    return (
     <header>
         <nav id="menuprincipal">
             <div className="logo">
@@ -26,65 +31,19 @@ const Header = () => {
 
         <nav role="navigation">
             <div id="menuToggle">
-                <input type="checkbox" />
+                <input id="check" type="checkbox" />
                 <span></span>
                 <span></span>
                 <span></span>
                 
                 <ul id="menu">
-                <Link to="/"><li onClick={() => {
-                    let menu = document.getElementById("menu")
-                    menu.style.display = "none"
-                    
-                    setTimeout( () => {menu.style.display = "block"}, 2000)
-
-                }}>Inicio</li></Link>
-                <Link to="/galery"><li onClick={() => {
-                    let menu = document.getElementById("menu")
-                    menu.style.display = "none"
-                    
-                    setTimeout( () => {menu.style.display = "block"}, 2000)
-
-                }}>Galería</li></Link>
-                <Link to="/about"><li onClick={() => {
-                    let menu = document.getElementById("menu")
-                    menu.style.display = "none"
-                    
-                    setTimeout( () => {menu.style.display = "block"}, 2000)
-
-                }}>Nosotros</li></Link>
-                <Link to="/tools"><li onClick={() => {
-                    let menu = document.getElementById("menu")
-                    menu.style.display = "none"
-                    
-                    setTimeout( () => {menu.style.display = "block"}, 2000)
-
-                }}>Herramientas</li></Link>
-                <Link to="/contact"><li onClick={() => {
-                    let menu = document.getElementById("menu")
-                    menu.style.display = "none"
-                    
-                    setTimeout( () => {menu.style.display = "block"}, 2000)
-
-                }}>Contacto</li></Link>
-
-                <Link to="/login"><li onClick={() => {
-                    let menu = document.getElementById("menu")
-                    menu.style.display = "none"
-                    
-                    setTimeout( () => {menu.style.display = "block"}, 2000)
-
-                }}>Ingresar</li></Link>
-
-                <Link to="/register"><li onClick={() => {
-                    let menu = document.getElementById("menu")
-                    menu.style.display = "none"
-                    
-                    setTimeout( () => {menu.style.display = "block"}, 2000)
-
-                }}>Registrarse</li></Link>
-
-
+                <Link to="/"><li onClick={closeMenu}>Inicio</li></Link>
+                <Link to="/galery"><li onClick={closeMenu}>Galería</li></Link>
+                <Link to="/about"><li onClick={closeMenu}>Nosotros</li></Link>
+                <Link to="/tools"><li onClick={closeMenu}>Herramientas</li></Link>
+                <Link to="/contact"><li onClick={closeMenu}>Contacto</li></Link>
+                <Link to="/login"><li onClick={closeMenu}>Ingresar</li></Link>
+                <Link to="/register"><li onClick={closeMenu}>Registrarse</li></Link>
                 </ul>
             </div>
         </nav>
