@@ -20,6 +20,10 @@
   width: 100vw;
 }
 
+#root {
+  max-width: 100vw;
+}
+
 header {
   position: relative;
 }
@@ -112,7 +116,7 @@ header {
 }
 
 #hero {
-  max-width: 100vw;
+  width: 100vw;
   height: 100vh;
   background-image: url("../public/images/hero5.jpg");
   background-size: cover;
@@ -524,6 +528,13 @@ transition: background-color 0.2s;
 
 @media (max-width: 450px) {
 
+
+  .imgSlider, #galery {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
   #about-us p {
       padding-right: 2%;
       padding-left: 2%;
@@ -621,6 +632,7 @@ transition: background-color 0.2s;
       justify-content: center;
       align-items: center;
       margin-right: 2em;
+      margin: 0;
 
   }
 
