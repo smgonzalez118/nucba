@@ -1,0 +1,14 @@
+LISTA DE PASOS - ARMADO DE PROYECTO INTEGRADOR NODE-REACT:
+
+1) Crear servidor de Bases de datos y pegar URL en env
+2) Buscar npm packages de APIs financieras confiables
+2) Crear los controllers.
+    - Recordar, necesitamos dos medidas: 
+            1) PRECIO OBJETIVO (sale de la BD, haciendo cálculo estadístico mediana) para cada horizonte. => sale de BD
+            2) PRECIO DE MERCADO del TICKER (último disponible, con eso ya es suficiente) => Sale de API financieras
+            Ambas fuentes se recogen en los controllers y se calcula el % de suba/baja mediana para cada uno de los 3 horizontes, para el ticker elegido.
+    - A DECIDIR: ¿Coloco una canasta de los 20 tickers más importantes del S&P 500 y listo? (para simplificar) ¿Los implemento en una lista desplegable? ("tabulados")-
+3) Probar la API con POSTMAN para ver que se hagan bien los cálculos, etc (ir probando)
+4) Una vez que anda bien la API, incorpor algunos componentes de la UI en Herramientas del FrontEnd
+5) Implementar los fetch a los endpoint para esos UI. (no creo sea necesario React Query, con Fetch es suficiente)
+
