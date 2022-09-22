@@ -1,6 +1,6 @@
 import { min, max, median, medianAbsoluteDeviation } from 'simple-statistics';
 
-const array = [1, 2, 3, 4, 5, 6];
+const array = [50, 30, 50, 25];
 
 console.log(min(array));
 console.log(max(array));

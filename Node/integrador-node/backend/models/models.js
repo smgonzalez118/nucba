@@ -5,17 +5,15 @@ const votesSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	targetPrices: {
-		shortTerm: Number,
-		midTerm: Number,
-		longTerm: Number,
-	},
+	targetPriceST: Number,
+	targetPriceMT: Number,
+	targetPriceLT: Number,
 	createdAt: {
 		type: Date,
 		default: Date.now,
 	},
 });
 
-const Votes = mongoose.model('Votes', votesSchema);
+const Vote = mongoose.model('Vote', votesSchema);
 
-export default Votes;
+export default Vote;

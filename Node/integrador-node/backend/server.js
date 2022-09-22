@@ -21,7 +21,7 @@ server.use(cors());
 server.use(express.json());
 
 //Routes
-server.use('/api/v1/todo', mainRouter);
+server.use('/api/v1/votes', mainRouter);
 
 server.get('/', (req, res) => {
 	res.json({ message: 'Deberias iniciar los request en /api/v1/<entidad>' });
