@@ -44,12 +44,7 @@ export const getStats = async (req, res) => {
 export const getMarketPrice = async (req, res) => {
 	const stock = req.params.ticker;
 	const date = calcDate();
-
 	let endpoint = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock}&apikey=${process.env.API_KEY}`;
-	let lastday = 0;
-
-	//let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
-	//date = "2022-07-01"
 	const nuevo = await fetch(endpoint);
 	const data = await nuevo.json();
 	const precio_actual = parseFloat(
