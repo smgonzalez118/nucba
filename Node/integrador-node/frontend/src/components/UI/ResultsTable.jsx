@@ -7,6 +7,7 @@ function ResultsTable(props) {
 	const [stats, setStats] = useState({});
 	const [marketPrice, setMarketPrice] = useState(null);
 
+	// NEXT FETCH GET VOTE STATS (MEDIAN ESTIMATES)
 	useEffect(async () => {
 		const data = await fetch(
 			`http://localhost:5000/api/v1/votes/${props.ticker}`,
@@ -19,9 +20,10 @@ function ResultsTable(props) {
 		);
 		const json = await data.json();
 		const stats = json.data;
-		setStats(stats);
-	}, [props.ticker]);
+		setStats(stats); // <--- GOT STATS
+	}, []);
 
+	// NEXT FETCH GET MARKET DATA (PRICE)
 	useEffect(async () => {
 		const data = await fetch(
 			`http://localhost:5000/api/v1/votes/price/${props.ticker}`,
@@ -34,8 +36,8 @@ function ResultsTable(props) {
 		);
 		const json = await data.json();
 		const price = json.data;
-		setMarketPrice(price);
-	}, [props.ticker]);
+		setMarketPrice(price); // <--- GOT MARKET PRICE
+	}, []);
 
 	return (
 		<>

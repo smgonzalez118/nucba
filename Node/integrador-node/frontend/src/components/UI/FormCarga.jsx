@@ -2,57 +2,10 @@ import React from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 import ResultsTable from './ResultsTable';
+import { desc } from './descs';
 
 const FormCarga = (props) => {
-	const desc = {
-		ABT: 'Abbott Laboratories',
-		ABBV: 'AbbVie Inc.',
-		ACN: 'Accenture plc',
-		GOOG: 'Alphabet Inc. (Google) Clase C',
-		AMZN: 'Amazon.com, Inc.',
-		AAPL: 'Apple Inc',
-		BAC: 'Bank of America Corporation',
-		'BRK.A': 'Berkshire Hathaway Inc.',
-		BMY: 'Bristol-Myers Squibb Company',
-		AVGO: 'Broadcom Inc.',
-		CVX: 'Chevron Corporation',
-		CSCO: 'Cisco Systems, Inc.',
-		KO: 'Coca-Cola Company (The)',
-		COST: 'Costco Wholesale Corporation',
-		DHR: 'Danaher Corporation',
-		LLY: 'Eli Lilly and Company',
-		XOM: 'Exxon Mobil Corporation',
-		HD: 'Home Depot, Inc. (The)',
-		JNJ: 'Johnson & Johnson',
-		JPM: 'JP Morgan Chase & Co.',
-		MA: 'Mastercard Incorporated',
-		MCD: 'McDonalds Corporation',
-		MRK: 'Merck & Company, Inc.',
-		META: 'Meta Platforms, Inc.',
-		MSFT: 'Microsoft Corp.',
-		MS: 'Morgan Stanley',
-		NEE: 'NextEra Energy, Inc.',
-		NKE: 'Nike, Inc.',
-		NVDA: 'NVIDIA Corporation',
-		ORCL: 'Oracle Corporation',
-		PEP: 'PepsiCo, Inc.',
-		PFE: 'Pfizer, Inc.',
-		PM: 'Philip Morris International Inc',
-		PG: 'Procter & Gamble Company (The)',
-		CRM: 'Salesforce, Inc.',
-		TSLA: 'Tesla, Inc.',
-		TXN: 'Texas Instruments Incorporated',
-		TMO: 'Thermo Fisher Scientific Inc',
-		TMUS: 'T-Mobile US, Inc.',
-		UPS: 'United Parcel Service, Inc.',
-		UNH: 'UnitedHealth Group Incorporated',
-		VZ: 'Verizon Communications Inc.',
-		V: 'Visa Inc.',
-		WMT: 'Walmart Inc.',
-		DIS: 'Walt Disney Company (The)',
-		WFC: 'Wells Fargo & Company',
-	};
-
+	console.log('Componente montado');
 	const tickers = [
 		'ABT',
 		'ABBV',
@@ -102,16 +55,26 @@ const FormCarga = (props) => {
 		'WFC',
 	];
 
-	const [voteData, setVote] = useState({});
+	const voteData = {};
 	const [voted, setVoted] = useState(false);
 
+	const handleData = (e) => {
+		const inputValue = e.target.value;
+		const dataName = e.target.name;
+		voteData[dataName] = inputValue;
+		console.log(voteData);
+	};
+
+	// <div> {voted ? <ResultsTable ticker={voteData.ticker} /> : ''}</div>}  => esto va al final
+
 	const listTickers = tickers.map((ticker) => (
-		<option value={ticker}>{desc[ticker]}</option>
+		<option value={ticker} key={ticker}>
+			{desc[ticker]}
+		</option>
 	));
 
 	const send = async (e) => {
-		e.preventDefault();
-		fetch('http://localhost:5000/api/v1/votes/save', {
+		const save = fetch('http://localhost:5000/api/v1/votes/save', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -122,42 +85,36 @@ const FormCarga = (props) => {
 	};
 
 	return (
-		<form>
-			<select
-				name='list-tickers'
-				id='list-tickers'
-				onChange={(e) => setVote({ ...voteData, ticker: e.target.value })}
-			>
-				{listTickers}
-			</select>
-			<input
-				type='number'
-				className='input__price-estimate'
-				placeholder='Estimación de corto plazo'
-				onChange={(e) => setVote({ ...voteData, shortPrice: e.target.value })}
-			/>
-			<input
-				type='number'
-				className='input__price-estimate'
-				placeholder='Estimación de medio plazo'
-				onChange={(e) => setVote({ ...voteData, midPrice: e.target.value })}
-			/>
-			<input
-				type='number'
-				className='input__price-estimate'
-				placeholder='Estimación de largo plazo'
-				onChange={(e) => setVote({ ...voteData, longPrice: e.target.value })}
-			/>
+		<section className='search' id='search'>
+			<form className='search' onSubmit={() => send()}>
+				<select name='ticker' id='list-tickers' onChange={handleData}>
+					{listTickers}
+				</select>
+				<input
+					type='number'
+					className='input__price-estimate'
+					name='targetPriceST'
+					placeholder='Estimación de corto plazo'
+					onChange={handleData}
+				/>
+				<input
+					type='number'
+					className='input__price-estimate'
+					name='targetPriceMT'
+					placeholder='Estimación de medio plazo'
+					onChange={handleData}
+				/>
+				<input
+					type='number'
+					className='input__price-estimate'
+					name='targetPriceLT'
+					placeholder='Estimación de largo plazo'
+					onChange={handleData}
+				/>
 
-			<input type='submit' onClick={(e) => send()} />
-			<div>
-				{() => {
-					if (voted) {
-						return <ResultsTable ticker={voteData.ticker} />;
-					}
-				}}
-			</div>
-		</form>
+				<input type='submit' value='ENVIAR!' />
+			</form>
+		</section>
 	);
 };
 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 import ResultsTable from '../components/UI/ResultsTable';
+import FormCarga from '../components/UI/FormCarga';
 
 const Tools = () => {
 	let $lastday = useRef();
@@ -10,7 +11,7 @@ const Tools = () => {
 	let $recomendacion = useRef();
 	let $ticker = useRef();
 	const [ticker, setTicker] = useState(null);
-	const [typeTool, setTool] = useState('recommend');
+	const [tool, setTool] = useState('sentimental');
 
 	async function getRecomend() {
 		setTicker($ticker.current.value.toUpperCase());
@@ -135,14 +136,14 @@ const Tools = () => {
 			});
 	}
 
-	if (typeTool === 'recommend') {
+	if (tool == 'recommend') {
 		return (
 			<>
 				<input type='button' value='HERRAMIENTA DE RECOMENDACIÓN' />
 				<input
 					type='button'
 					value='HERRAMIENTA DE ANÁLISIS DE SENTIMIENTO DE MERCADO'
-					onClick={setTool('sentimental')}
+					onClick={() => setTool('sentimental')}
 				/>
 
 				<section className='search' id='search'>
@@ -190,13 +191,13 @@ const Tools = () => {
 				</section>
 			</>
 		);
-	} else if (typeTool === 'sentimental') {
+	} else if (tool === 'sentimental') {
 		return (
 			<>
 				<input
 					type='button'
 					value='HERRAMIENTA DE RECOMENDACIÓN'
-					onClick={setTool('recommend')}
+					onClick={() => setTool('recommend')}
 				/>
 				<input
 					type='button'

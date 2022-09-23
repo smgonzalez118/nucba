@@ -12,3 +12,7 @@ LISTO => 4) Probar la API con POSTMAN para ver que se hagan bien los cálculos, 
 5) Una vez que anda bien la API, incorpor algunos componentes de la UI en Herramientas del FrontEnd
 6) Implementar los fetch a los endpoint para esos UI. (no creo sea necesario React Query, con Fetch es suficiente)
 
+
+NOTAS:
+
+1) el enviar del form NO hace el POST ==> VER!!!!!!
