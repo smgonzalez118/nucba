@@ -450,7 +450,7 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	gap: 1em;
-	padding-top: 10%;
+	padding-top: 15%;
 }
 
 .login__form #user,
@@ -522,6 +522,28 @@ footer {
 	display: flex;
 	flex-direction: column;
 	width: 30%;
+}
+
+.command-section {
+	position: absolute;
+	top: 10%;
+	left: 34%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.command-section input {
+	background-color: #002244;
+	color: rgb(183, 200, 207);
+	margin-bottom: 0.5em;
+	padding: 0.15em;
+	opacity: 85%;
+}
+
+#instruccion-consenso {
+	font-size: larger;
 }
 
 @media (max-width: 768px) {
