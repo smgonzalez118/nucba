@@ -9,7 +9,7 @@ import {
 
 const router = Router();
 
-//api/v1/todo
+//api/v1/votes
 router.get('/:ticker', getStats);
 router.post('/save', saveVote);
 router.get('/data', getData);

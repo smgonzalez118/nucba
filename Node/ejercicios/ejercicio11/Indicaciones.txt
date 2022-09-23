@@ -1,0 +1,12 @@
+ENUNCIADO EJERCICIO INTEGRADOR MINI CURSO NODE freeCodeCamp:
+- Usar Express
+- Usar los datos provistos (simula BD)
+- Modularizar rutas con una carpeta routers y un archivo para cada ruta principal
+- Hacer las siguientes rutas de PROGRAMACIÓN:
+  - GET "/"
+  - GET "/:lenguaje" y agregar un filtrado por query (ordenar Q vistas)
+  - GET "/:lenguaje:/nivel"
+  - POST "/" (agregar nuevo curso)
+  - PUT "/:id" (modificar un curso)
+  - DELETE "/:id" (eliminar un curso)
+
