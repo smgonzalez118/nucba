@@ -22,7 +22,6 @@ function ResultsTable(props) {
 		const json = await data.json();
 		const stats = await json.data;
 		setStats(stats); // <--- GOT STATS
-		console.log('Trae los stats?' + stats);
 	};
 
 	useEffect(() => {
@@ -44,7 +43,6 @@ function ResultsTable(props) {
 		const json = await data.json();
 		const price = await json.data;
 		setMarketPrice(price); // <--- GOT MARKET PRICE
-		console.log('Trae el market Price?' + price);
 	};
 
 	useEffect(() => {
@@ -53,7 +51,7 @@ function ResultsTable(props) {
 
 	return (
 		<>
-			<h2> ACTIVO: {desc[props.ticker]} </h2>
+			<h2 id='table-title'> ACTIVO: {desc[props.ticker]} </h2>
 			<h3> PRECIO ACTUAL: {marketPrice} </h3>
 			<Table striped bordered hover>
 				<thead>

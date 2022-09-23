@@ -484,6 +484,46 @@ footer {
 	transition: background-color 0.2s;
 }
 
+#consensus-send {
+	background-color: var(--maincolor);
+	color: #f2f2f2;
+	width: 50%;
+	height: 50%;
+	font-weight: 600;
+	margin: 1em auto;
+}
+
+#consensus-send:hover {
+	background-color: #015a7a;
+	transition: background-color 1s;
+}
+
+#consensus-send:active {
+	background-color: #017a7a;
+	transition: background-color 0.2s;
+}
+
+#list-tickers {
+	margin-bottom: 1em;
+}
+
+#table-title {
+	padding-top: 2em;
+}
+
+#instruccion-consenso {
+	width: 100%;
+	text-align: center;
+	height: auto;
+	padding-bottom: 1em;
+}
+
+.sentimental-form {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+}
+
 @media (max-width: 768px) {
 	#about-us p {
 		padding-right: 5%;

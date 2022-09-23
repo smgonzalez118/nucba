@@ -139,12 +139,14 @@ const Tools = () => {
 	if (tool == 'recommend') {
 		return (
 			<>
-				<input type='button' value='HERRAMIENTA DE RECOMENDACIÓN' />
-				<input
-					type='button'
-					value='HERRAMIENTA DE ANÁLISIS DE SENTIMIENTO DE MERCADO'
-					onClick={() => setTool('sentimental')}
-				/>
+				<div className='command-section'>
+					<input type='button' value='HERRAMIENTA DE RECOMENDACIÓN' />
+					<input
+						type='button'
+						value='HERRAMIENTA DE ANÁLISIS DE SENTIMIENTO DE MERCADO'
+						onClick={() => setTool('sentimental')}
+					/>
+				</div>
 
 				<section className='search' id='search'>
 					<form className='search__form'>
@@ -194,15 +196,17 @@ const Tools = () => {
 	} else if (tool === 'sentimental') {
 		return (
 			<>
-				<input
-					type='button'
-					value='HERRAMIENTA DE RECOMENDACIÓN'
-					onClick={() => setTool('recommend')}
-				/>
-				<input
-					type='button'
-					value='HERRAMIENTA DE ANÁLISIS DE SENTIMIENTO DE MERCADO'
-				/>
+				<div className='command-section'>
+					<input
+						type='button'
+						value='HERRAMIENTA DE RECOMENDACIÓN'
+						onClick={() => setTool('recommend')}
+					/>
+					<input
+						type='button'
+						value='HERRAMIENTA DE ANÁLISIS DE SENTIMIENTO DE MERCADO'
+					/>
+				</div>
 				<FormCarga />
 			</>
 		);

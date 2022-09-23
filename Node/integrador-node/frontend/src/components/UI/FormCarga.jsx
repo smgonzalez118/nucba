@@ -79,11 +79,18 @@ const FormCarga = (props) => {
 			body: JSON.stringify(vote),
 		});
 		setVoted(true);
+		document.querySelector('.sentimental-form').style.display = 'none';
 	};
 
 	return (
-		<section className='search' id='search'>
-			<form className='search' onSubmit={(e) => send(e)}>
+		<section className='search sentimental-section' id='search'>
+			<form className='search sentimental-form' onSubmit={(e) => send(e)}>
+				<span id='instruccion-consenso'>
+					{' '}
+					{
+						'Coloque su estimación de precio para los distintos horizontes temporales y le arrojaremos la estimación de consenso del mercado (mediana de las estimaciones)'
+					}
+				</span>
 				<select name='ticker' id='list-tickers' onChange={handleData}>
 					{listTickers}
 				</select>
@@ -91,25 +98,25 @@ const FormCarga = (props) => {
 					type='number'
 					className='input__price-estimate'
 					name='targetPriceST'
-					placeholder='Estimación de corto plazo'
+					placeholder='Corto plazo'
 					onChange={handleData}
 				/>
 				<input
 					type='number'
 					className='input__price-estimate'
 					name='targetPriceMT'
-					placeholder='Estimación de medio plazo'
+					placeholder='Medio plazo'
 					onChange={handleData}
 				/>
 				<input
 					type='number'
 					className='input__price-estimate'
 					name='targetPriceLT'
-					placeholder='Estimación de largo plazo'
+					placeholder='Largo plazo'
 					onChange={handleData}
 				/>
 
-				<input type='submit' value='ENVIAR!' />
+				<input type='submit' value='ENVIAR!' id='consensus-send' />
 			</form>
 			<div> {voted ? <ResultsTable ticker={vote.ticker} /> : ''} </div>
 		</section>
