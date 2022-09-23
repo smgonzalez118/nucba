@@ -8,7 +8,8 @@ function ResultsTable(props) {
 	const [marketPrice, setMarketPrice] = useState(null);
 
 	// NEXT FETCH GET VOTE STATS (MEDIAN ESTIMATES)
-	useEffect(async () => {
+
+	const handleGetStats = async () => {
 		const data = await fetch(
 			`http://localhost:5000/api/v1/votes/${props.ticker}`,
 			{
@@ -19,12 +20,18 @@ function ResultsTable(props) {
 			}
 		);
 		const json = await data.json();
-		const stats = json.data;
+		const stats = await json.data;
 		setStats(stats); // <--- GOT STATS
-	}, []);
+		console.log('Trae los stats?' + stats);
+	};
+
+	useEffect(() => {
+		handleGetStats();
+	}, [props.ticker]);
 
 	// NEXT FETCH GET MARKET DATA (PRICE)
-	useEffect(async () => {
+
+	const handleGetMarketPrice = async () => {
 		const data = await fetch(
 			`http://localhost:5000/api/v1/votes/price/${props.ticker}`,
 			{
@@ -35,9 +42,14 @@ function ResultsTable(props) {
 			}
 		);
 		const json = await data.json();
-		const price = json.data;
+		const price = await json.data;
 		setMarketPrice(price); // <--- GOT MARKET PRICE
-	}, []);
+		console.log('Trae el market Price?' + price);
+	};
+
+	useEffect(() => {
+		handleGetMarketPrice();
+	}, [props.ticker]);
 
 	return (
 		<>
@@ -55,17 +67,26 @@ function ResultsTable(props) {
 					<tr>
 						<td>Corto plazo</td>
 						<td>{stats.medianST}</td>
-						<td>{(marketPrice / stats.medianST - 1) * 100}</td>
+						<td>
+							{Math.round((stats.medianST / marketPrice - 1) * 100).toString() +
+								'%'}
+						</td>
 					</tr>
 					<tr>
 						<td>Medio plazo</td>
 						<td>{stats.medianMT}</td>
-						<td>{(marketPrice / stats.medianMT - 1) * 100}</td>
+						<td>
+							{Math.round((stats.medianMT / marketPrice - 1) * 100).toString() +
+								'%'}
+						</td>
 					</tr>
 					<tr>
 						<td>Largo plazo</td>
 						<td>{stats.medianLT}</td>
-						<td>{(marketPrice / stats.medianLT - 1) * 100}</td>
+						<td>
+							{Math.round((stats.medianLT / marketPrice - 1) * 100).toString() +
+								'%'}
+						</td>
 					</tr>
 				</tbody>
 			</Table>
