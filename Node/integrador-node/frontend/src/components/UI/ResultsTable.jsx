@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import { desc } from './descs';
 
 function ResultsTable(props) {
 	const [stats, setStats] = useState({});
@@ -38,8 +39,8 @@ function ResultsTable(props) {
 
 	return (
 		<>
-			<h2> {props.ticker} </h2>
-			<h3> {marketPrice} </h3>
+			<h2> ACTIVO: {desc[props.ticker]} </h2>
+			<h3> PRECIO ACTUAL: {marketPrice} </h3>
 			<Table striped bordered hover>
 				<thead>
 					<tr>
