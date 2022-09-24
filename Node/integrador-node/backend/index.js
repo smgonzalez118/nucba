@@ -30,5 +30,3 @@ server.get('/', (req, res) => {
 server.listen(PORT, () => {
 	console.log(`Sevidor en http://localhost:${PORT}`);
 });
-
-//export default server;
