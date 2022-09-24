@@ -107,8 +107,6 @@ const Tools = () => {
 				let recomendacion = '';
 				let mediaMovil20d = parseFloat((suma / 20).toFixed(2));
 
-				console.log(mediaMovil20d);
-				console.log(precio_actual);
 				if (precio_actual > mediaMovil20d) {
 					recomendacion = 'COMPRA';
 					$recomendacion.current.classList.add('verde');
@@ -140,10 +138,10 @@ const Tools = () => {
 		return (
 			<>
 				<div className='command-section'>
-					<input type='button' value='HERRAMIENTA DE RECOMENDACIÓN' />
+					<input type='button' value='RECOMENDACIÓN' />
 					<input
 						type='button'
-						value='HERRAMIENTA DE ANÁLISIS DE SENTIMIENTO DE MERCADO'
+						value='SENTIMIENTO DE MERCADO'
 						onClick={() => setTool('sentimental')}
 					/>
 				</div>
@@ -199,13 +197,10 @@ const Tools = () => {
 				<div className='command-section'>
 					<input
 						type='button'
-						value='HERRAMIENTA DE RECOMENDACIÓN'
+						value='RECOMENDACIÓN'
 						onClick={() => setTool('recommend')}
 					/>
-					<input
-						type='button'
-						value='HERRAMIENTA DE ANÁLISIS DE SENTIMIENTO DE MERCADO'
-					/>
+					<input type='button' value='SENTIMIENTO DE MERCADO' />
 				</div>
 				<FormCarga />
 			</>

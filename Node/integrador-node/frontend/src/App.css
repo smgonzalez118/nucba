@@ -195,7 +195,7 @@ header {
 
 #galery {
 	position: relative;
-	height: 90vh;
+	height: 100vh;
 	width: 100vw;
 	background: radial-gradient(
 		circle,
@@ -301,7 +301,7 @@ header {
 #contact form {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	gap: 1em;
 	width: 50%;
@@ -450,7 +450,7 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	gap: 1em;
-	padding-top: 15%;
+	padding-top: 10%;
 }
 
 .login__form #user,
@@ -491,6 +491,7 @@ footer {
 	height: 50%;
 	font-weight: 600;
 	margin: 1em auto;
+	padding: 0.3em;
 }
 
 #consensus-send:hover {
@@ -527,7 +528,7 @@ footer {
 .command-section {
 	position: absolute;
 	top: 10%;
-	left: 34%;
+	left: 42%;
 	display: flex;
 	flex-direction: column;
 	margin-top: 1em;
@@ -582,6 +583,21 @@ footer {
 	#login__form-button {
 		width: 35%;
 		height: 7%;
+	}
+
+	#instruccion-consenso {
+		width: 100%;
+		text-align: center;
+		height: auto;
+		padding-bottom: 1em;
+	}
+
+	.sentimental-form {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		width: 90%;
+		padding-top: 0;
 	}
 }
 
@@ -850,31 +866,71 @@ footer {
 	}
 
 	#galery h3 {
-		font-size: xx-large;
+		font-size: x-large;
 		text-align: center;
 		margin-right: 1.5em;
 	}
 
 	#galery p {
-		font-size: xx-large;
+		font-size: x-large;
 		text-align: center;
 		margin-right: 1.5em;
 	}
 
 	#galery #midImage {
-		height: 18.5em;
+		height: 16.3em;
 	}
 
 	#galery .mid {
-		font-size: 185%;
+		font-size: 145%;
 	}
 
 	#galery .carousel-caption {
 		margin-top: 0;
-		padding-top: 0;
+		padding-top: 10%;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+	}
+
+	#instruccion-consenso {
+		width: 100%;
+		text-align: center;
+		height: auto;
+		padding-bottom: 1em;
+	}
+
+	.sentimental-form {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		width: 90%;
+	}
+
+	.sentimental-section {
+		padding-top: 0%;
+	}
+
+	.command-section {
+		position: absolute;
+		top: 10%;
+		left: 25%;
+		display: flex;
+		flex-direction: column;
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+
+	.search__form {
+		padding-top: 25%;
+	}
+
+	.search__form h2 {
+		font-size: x-large;
+	}
+
+	.sentimental-form {
+		padding-top: 0;
 	}
 }
 
@@ -909,5 +965,5 @@ form #results {
 }
 
 #lastday {
-	font-size: 2em;
+	font-size: 1.5em;
 }

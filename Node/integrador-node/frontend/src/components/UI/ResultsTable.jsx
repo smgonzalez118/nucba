@@ -10,44 +10,52 @@ function ResultsTable(props) {
 	// NEXT FETCH GET VOTE STATS (MEDIAN ESTIMATES)
 
 	const handleGetStats = async () => {
-		const data = await fetch(
-			`http://localhost:5000/api/v1/votes/${props.ticker}`,
-			{
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			}
-		);
-		const json = await data.json();
-		const stats = await json.data;
-		setStats(stats); // <--- GOT STATS
+		try {
+			const data = await fetch(
+				`http://localhost:5000/api/v1/votes/${props.ticker}`,
+				{
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			);
+			const json = await data.json();
+			const stats = await json.data;
+			setStats(stats); // <--- GOT STATS
+		} catch (error) {
+			console.warn('Server error');
+		}
 	};
 
 	useEffect(() => {
 		handleGetStats();
-	}, [props.ticker]);
+	}, []);
 
 	// NEXT FETCH GET MARKET DATA (PRICE)
 
 	const handleGetMarketPrice = async () => {
-		const data = await fetch(
-			`http://localhost:5000/api/v1/votes/price/${props.ticker}`,
-			{
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			}
-		);
-		const json = await data.json();
-		const price = await json.data;
-		setMarketPrice(price); // <--- GOT MARKET PRICE
+		try {
+			const data = await fetch(
+				`http://localhost:5000/api/v1/votes/price/${props.ticker}`,
+				{
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			);
+			const json = await data.json();
+			const price = await json.data;
+			setMarketPrice(price); // <--- GOT MARKET PRICE
+		} catch (error) {
+			console.warn('Server error');
+		}
 	};
 
 	useEffect(() => {
 		handleGetMarketPrice();
-	}, [props.ticker]);
+	}, []);
 
 	return (
 		<>
@@ -63,27 +71,36 @@ function ResultsTable(props) {
 				</thead>
 				<tbody>
 					<tr>
-						<td>Corto plazo</td>
+						<td>Corto</td>
 						<td>{stats.medianST}</td>
 						<td>
-							{Math.round((stats.medianST / marketPrice - 1) * 100).toString() +
-								'%'}
+							{marketPrice
+								? Math.round(
+										(stats.medianST / marketPrice - 1) * 100
+								  ).toString() + '%'
+								: ''}
 						</td>
 					</tr>
 					<tr>
-						<td>Medio plazo</td>
+						<td>Medio</td>
 						<td>{stats.medianMT}</td>
 						<td>
-							{Math.round((stats.medianMT / marketPrice - 1) * 100).toString() +
-								'%'}
+							{marketPrice
+								? Math.round(
+										(stats.medianMT / marketPrice - 1) * 100
+								  ).toString() + '%'
+								: ''}
 						</td>
 					</tr>
 					<tr>
-						<td>Largo plazo</td>
+						<td>Largo</td>
 						<td>{stats.medianLT}</td>
 						<td>
-							{Math.round((stats.medianLT / marketPrice - 1) * 100).toString() +
-								'%'}
+							{marketPrice
+								? Math.round(
+										(stats.medianLT / marketPrice - 1) * 100
+								  ).toString() + '%'
+								: ''}
 						</td>
 					</tr>
 				</tbody>

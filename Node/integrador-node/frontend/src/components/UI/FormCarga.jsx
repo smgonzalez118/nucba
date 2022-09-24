@@ -71,15 +71,19 @@ const FormCarga = (props) => {
 
 	const send = async (e) => {
 		e.preventDefault();
-		const save = fetch('http://localhost:5000/api/v1/votes/save', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(vote),
-		});
-		setVoted(true);
-		document.querySelector('.sentimental-form').style.display = 'none';
+		try {
+			const save = fetch('http://localhost:5000/api/v1/votes/save', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(vote),
+			});
+			setVoted(true);
+			document.querySelector('.sentimental-form').style.display = 'none';
+		} catch (error) {
+			console.warn('Error al enviar el POST vote');
+		}
 	};
 
 	return (
@@ -116,7 +120,7 @@ const FormCarga = (props) => {
 					onChange={handleData}
 				/>
 
-				<input type='submit' value='ENVIAR!' id='consensus-send' />
+				<input type='submit' value='ENVIAR' id='consensus-send' />
 			</form>
 			<div> {voted ? <ResultsTable ticker={vote.ticker} /> : ''} </div>
 		</section>
