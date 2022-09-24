@@ -31,4 +31,4 @@ server.listen(PORT, () => {
 	console.log(`Sevidor en http://localhost:${PORT}`);
 });
 
-export default server;
+//export default server;
