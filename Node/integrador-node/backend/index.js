@@ -3,9 +3,6 @@ import { connectDB } from './config/db.js';
 import dotenv from 'dotenv';
 import { mainRouter } from './routes/mainRouter.js';
 import cors from 'cors';
-import Vote from './models/models.js';
-import { calcDate } from './utils/dates.js';
-import { getMarketPrice } from './controllers/controller.js';
 
 const server = express();
 
@@ -29,8 +26,6 @@ server.use('/api/v1/votes', mainRouter);
 server.get('/', (req, res) => {
 	res.json({ message: 'Deberias iniciar los request en /api/v1/<entidad>' });
 });
-
-server.get('/api/v1/votes/prueba/:ticker', getMarketPrice);
 
 server.listen(PORT, () => {
 	console.log(`Sevidor en http://localhost:${PORT}`);
