@@ -2,11 +2,11 @@
 	"name": "integrador-node-smg-nucba",
 	"version": "1.0.0",
 	"description": "Proyecto integrador del bootcamp de Desarrollo web full Stack de NUCBA - Sebastian Matias Gonzalez",
-	"main": "server.js",
+	"main": "index.js",
 	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon server.js"
+		"start": "nodemon index.js"
 	},
 	"author": "",
 	"license": "ISC",
