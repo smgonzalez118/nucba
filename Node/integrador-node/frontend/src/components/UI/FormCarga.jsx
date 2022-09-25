@@ -72,7 +72,7 @@ const FormCarga = (props) => {
 	const send = async (e) => {
 		e.preventDefault();
 		try {
-			const save = fetch('http://localhost:5000/api/v1/votes/save', {
+			const save = fetch('https://bluequantum-backend3.onrender.com/api/v1/votes/save', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
