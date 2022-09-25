@@ -12,7 +12,7 @@ function ResultsTable(props) {
 	const handleGetStats = async () => {
 		try {
 			const data = await fetch(
-				`http://localhost:5000/api/v1/votes/${props.ticker}`,
+				`https://bluequantum-backend3.onrender.com/api/v1/votes/${props.ticker}`,
 				{
 					method: 'GET',
 					headers: {
