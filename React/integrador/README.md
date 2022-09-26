@@ -1,4 +1,4 @@
-# PROYECTO INTEGRADOR CARRERA DESARROLLO FULL STACK NUCBA - FRONTEND
+# PROYECTO INTEGRADOR - REACT - DESARROLLO FULL STACK NUCBA
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
