@@ -4,7 +4,7 @@
 	"description": "Proyecto integrador del bootcamp de Desarrollo web full Stack de NUCBA - Sebastian Matias Gonzalez",
 	"main": "index.js",
 	"engines": {
-		"node": "14.x"
+		"node": "18.x"
 	},
 	"type": "module",
 	"scripts": {

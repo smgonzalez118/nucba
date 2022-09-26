@@ -25,7 +25,6 @@ export const calcDate = () => {
 			formatea(f.getMonth() + 1) +
 			'-' +
 			formatea(f.getDate() - 1);
-		lastday = 1;
 		return date;
 	} else if (f.getHours() < 21) {
 		if (f.getDay() == 0) {
@@ -35,7 +34,6 @@ export const calcDate = () => {
 				formatea(f.getMonth() + 1) +
 				'-' +
 				formatea(f.getDate() - 2);
-			lastday = 1;
 			return date;
 		} else if (f.getDay() == 1) {
 			date =
@@ -44,7 +42,6 @@ export const calcDate = () => {
 				formatea(f.getMonth() + 1) +
 				'-' +
 				formatea(f.getDate() - 3);
-			lastday = 1;
 			return date;
 		} else {
 			date =
