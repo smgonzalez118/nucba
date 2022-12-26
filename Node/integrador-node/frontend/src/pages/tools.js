@@ -18,7 +18,7 @@ const Tools = () => {
 
 		const API_KEY = 'LT6OSQ25CS08KJTY';
 
-		let endpoint = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
+		let endpoint = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker}&apikey=${API_KEY}`;
 		/*const FERIADOS = [{dia: 17, mes: 1}, {dia: 21, mes: 2}, {dia: 15, mes: 4}, {dia: 30, mes: 5}, {dia: 19, mes: 6},
         {dia: 4, mes: 7}, {dia: 5, mes: 9}, {dia: 24, mes: 11}, {dia: 26, mes: 12}]*/
 		let lastday = 0;
