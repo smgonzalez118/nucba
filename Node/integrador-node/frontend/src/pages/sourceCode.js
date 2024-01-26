@@ -10,12 +10,12 @@ const SourceCode = () => {
 					Frontend:
 					https://github.com/smgonzalez118/nucba/tree/master/Node/integrador-node/frontend
 				</li>
-				<li>Backend: https://github.com/smgonzalez118/bluequantum-backend</li>
-				<p>
-					En el readme del respositorio backend se encuentra explicado todo el
-					trabajo realizado y las herramientas utilizadas.{' '}
-				</p>
+				<li>Backend: https://github.com/smgonzalez118/bluequantum-backend </li>
 			</ul>
+			<p>
+				En el readme del respositorio backend se encuentra explicado todo el
+				trabajo realizado y las herramientas utilizadas.{' '}
+			</p>
 		</section>
 	);
 };
