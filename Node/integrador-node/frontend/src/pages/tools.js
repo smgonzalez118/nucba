@@ -25,7 +25,7 @@ const Tools = () => {
 
 		//let date = (f.getFullYear()) + "-" + formatea(f.getMonth()+1) + "-" + formatea(f.getDate())
 		//date = "2022-07-01"
-		const nuevo = await fetch(endpoint)
+		const nuevo = fetch(endpoint)
 			.then((data) => data.json())
 			.then((data) => {
 				console.log(String(data));
