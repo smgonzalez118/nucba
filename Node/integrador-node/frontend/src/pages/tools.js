@@ -13,12 +13,12 @@ const Tools = () => {
 	let $ticker = useRef();
 	const [ticker, setTicker] = useState(null);
 	const [tool, setTool] = useState('sentimental');
+	const [precio_actual, setPrecio_actual] = useState(false);
 
 	async function getRecomend() {
 		setTicker($ticker.current.value.toUpperCase());
 		let [date, lastday] = dateFormat();
 		const API_KEY = 'LT6OSQ25CS08KJTY';
-
 		let endpoint = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
 		/*const FERIADOS = [{dia: 17, mes: 1}, {dia: 21, mes: 2}, {dia: 15, mes: 4}, {dia: 30, mes: 5}, {dia: 19, mes: 6},
         {dia: 4, mes: 7}, {dia: 5, mes: 9}, {dia: 24, mes: 11}, {dia: 26, mes: 12}]*/
@@ -29,6 +29,9 @@ const Tools = () => {
 			.then((data) => data.json())
 			.then((data) => {
 				console.log(String(data));
+				setPrecio_actual(
+					parseFloat(data['Time Series (Daily)'][date]['4. close'])
+				);
 				let suma = 0;
 				let contador = 0;
 				for (let fecha in data['Time Series (Daily)']) {
@@ -39,10 +42,6 @@ const Tools = () => {
 						break;
 					}
 				}
-
-				let precio_actual = parseFloat(
-					data['Time Series (Daily)'][date]['4. close']
-				);
 
 				let precio_7d = 0;
 				let recomendacion = '';
