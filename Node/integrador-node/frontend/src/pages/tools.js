@@ -35,7 +35,7 @@ const Tools = () => {
 				let suma = 0;
 				let contador = 0;
 				for (let fecha in data['Time Series (Daily)']) {
-					let precio = data['Time Series (Daily)'][fecha]['4. close'];
+					let precio = data['Time Series (Daily)'][date]['4. close'];
 					suma += parseFloat(precio);
 					contador += 1;
 					if (contador === 20) {
