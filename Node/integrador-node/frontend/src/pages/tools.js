@@ -13,7 +13,6 @@ const Tools = () => {
 	let $ticker = useRef();
 	const [ticker, setTicker] = useState(null);
 	const [tool, setTool] = useState('sentimental');
-	const [precio_actual, setPrecio_actual] = useState(false);
 
 	async function getRecomend() {
 		setTicker($ticker.current.value.toUpperCase());
@@ -29,8 +28,8 @@ const Tools = () => {
 			.then((data) => data.json())
 			.then((data) => {
 				console.log(String(data));
-				setPrecio_actual(
-					parseFloat(data['Time Series (Daily)'][date]['4. close'])
+				let precio_actual = parseFloat(
+					data['Time Series (Daily)'][date]['4. close']
 				);
 				let suma = 0;
 				let contador = 0;

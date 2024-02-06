@@ -38,7 +38,7 @@ function ResultsTable(props) {
 
 	const handleGetMarketPrice = async () => {
 		try {
-			const date = dateFormat();
+			let [date, lastday] = dateFormat();
 			const API_KEY = 'LT6OSQ25CS08KJTY';
 
 			let endpoint = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${props.ticker.toUpperCase()}&apikey=${API_KEY}`;
