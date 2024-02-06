@@ -29,19 +29,20 @@ const Tools = () => {
 			.then((data) => data.json())
 			.then((data) => {
 				console.log(String(data));
-				let precio_actual = parseFloat(
-					data['Time Series (Daily)'][date]['4. close']
-				);
 				let suma = 0;
 				let contador = 0;
 				for (let fecha in data['Time Series (Daily)']) {
-					let precio = data['Time Series (Daily)'][date]['4. close'];
+					let precio = data['Time Series (Daily)'][fecha]['4. close'];
 					suma += parseFloat(precio);
 					contador += 1;
 					if (contador === 20) {
 						break;
 					}
 				}
+
+				let precio_actual = parseFloat(
+					data['Time Series (Daily)'][date]['4. close']
+				);
 
 				let precio_7d = 0;
 				let recomendacion = '';
